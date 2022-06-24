@@ -6,6 +6,45 @@ import { Header } from './components/Header';
 import { SideBar } from './components/Sidebar';
 
 
+// criando conteudos para os posts
+const posts = [
+  {
+    id: 1,
+    author: {
+    avatarUrl: 'https://github.com/maiconcar.png',
+    name: 'Maicon Cardoso',
+    role:'Web Developer',
+    },
+
+    content: [
+      { type: 'paragraph', content:'Fala galeraa 👋'},
+      { type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type:'link', content:'jane.design/doctorcare'},            
+    ],
+
+    publishedAt: new Date('2022-06-22 15:00:00' ),
+  },
+
+  {
+    id: 2,
+    author: {
+    avatarUrl: 'https://github.com/battian.png',
+    name: 'Ana',
+    role:'Senior Web Developer',
+    },
+
+    content: [
+      { type: 'paragraph', content:'Fala galeraa 👋'},
+      { type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type:'link', content:'jane.design/doctorcare'},            
+    ],
+
+    publishedAt: new Date('2022-06-23 15:00:00' ),
+  },
+
+];
+
+
 export function App() {
 
   return (
@@ -14,15 +53,18 @@ export function App() {
      <div className={styles.wrapper}>
      <SideBar/>
       <main>
-      <Post 
-        athour="Maicon Cardoso"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi culpa nesciunt maiores quibusdam quidem, tempora delectus aliquid quis iusto ullam. Et voluptate deleniti sed. Accusamus labore harum ipsum error aliquam."
-       />
-       {/* <Post
-        athour="Ana"
-        content="Um novo posto aqui somente para teste"/> */}
+        { posts.map(post => {
+          return (
+            <Post
+              key={post.id}
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+            />
+          )
+        }) }
 
-      </main>
+        </main>
 
        </div>
     </div>

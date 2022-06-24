@@ -10,6 +10,8 @@
 
     --green-300: #00b37e;
     --green-500: #00875f;
+
+    --red-500: #f75a68;
 }
 
 
@@ -19,14 +21,14 @@
 }
 
 *{
-    margin:0 auto;
+    margin:0 ;
     padding: 0;
     box-sizing: border-box;
 }
 body {
     background: var(--gray-900);
     color: var(--gray-300);
-    -webkit-font-smoothing: antialiased;  /* fontes nos navegadores que usan webkit ficam mais detalhadas */
+    -webkit-font-smoothing: antialiased;  /* fontes dos navegadores que usan webkit ficam mais detalhadas */
 }
 
 body, input, textarea, button {
